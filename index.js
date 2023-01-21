@@ -12,24 +12,22 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 //CORS policy
-app.use(cors({
-  methods:['GET','PUT','POST','DELETE']
-}));
+app.use(cors());
 
 //JSON
 app.use(express.json())
 
 //load product routes
-app.use(productRoutes)
+app.use("/prod",productRoutes)
 
 //load category routes
-app.use(categoryRoutes)
+app.use("/cat",categoryRoutes)
 
 //load subCategory routes
-app.use("/",subCategoryRoutes)
+app.use("/subcat",subCategoryRoutes)
 
 //load shipping routes
-app.use(shippingRoutes)
+app.use("/ship",shippingRoutes)
 
 app.listen(PORT,()=>{
   console.log(`server running on ${PORT}`)

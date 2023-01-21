@@ -1,4 +1,5 @@
 const { categoryModel } = require("../models/categories");
+const {productModel}=require('../models/products')
 
 //controller finds all the categories from the db
 const findCategories = async (req, res) => {
