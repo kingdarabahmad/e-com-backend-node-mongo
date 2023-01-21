@@ -12,7 +12,9 @@ const app = express();
 const PORT = process.env.PORT || 7000;
 
 //CORS policy
-app.use(cors());
+app.use(cors({
+  methods:['GET','PUT','POST','DELETE']
+}));
 
 //JSON
 app.use(express.json())
