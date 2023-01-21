@@ -4,7 +4,7 @@ require("./config/config");
 const cors = require("cors");
 const productRoutes = require('./routes/productRoute');
 const subCategoryRoutes = require('./routes/subCategoryRoute');
-const CategoryRoutes = require('./routes/categoryRoute');
+const categoryRoutes = require('./routes/categoryRoute');
 const shippingRoutes = require('./routes/shippingRoute');
 
 const app = express();
@@ -18,16 +18,16 @@ app.use(cors());
 app.use(express.json())
 
 //load product routes
-app.use("/",productRoutes)
+app.use(productRoutes)
 
 //load category routes
-app.use("/",CategoryRoutes)
+app.use(categoryRoutes)
 
 //load subCategory routes
 app.use("/",subCategoryRoutes)
 
 //load shipping routes
-app.use('/',shippingRoutes)
+app.use(shippingRoutes)
 
 app.listen(PORT,()=>{
   console.log(`server running on ${PORT}`)

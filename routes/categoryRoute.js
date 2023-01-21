@@ -1,9 +1,9 @@
 const express=require('express');
 const { findCategories, findProductsOnSubCategory } = require('../controllers/categoryController');
-const CategoryRouter=express.Router()
+const categoryRouter=express.Router()
 
-CategoryRouter.get("/categories",findCategories );
+categoryRouter.get("/categories",findCategories );
   
-CategoryRouter.get("/categories/:id",findProductsOnSubCategory );
+categoryRouter.get("/categories/:id",findProductsOnSubCategory );
   
-module.exports= CategoryRouter
+module.exports= categoryRouter
